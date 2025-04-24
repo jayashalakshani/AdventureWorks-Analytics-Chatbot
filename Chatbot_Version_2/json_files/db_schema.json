@@ -1,0 +1,2302 @@
+[
+    {
+      "table_name": "dbo.AWBuildVersion",
+      "columns": [
+        {
+          "name": "SystemInformationID",
+          "type": "tinyint"
+        },
+        {
+          "name": "Database Version",
+          "type": "nvarchar"
+        },
+        {
+          "name": "VersionDate",
+          "type": "datetime"
+        },
+        {
+          "name": "ModifiedDate",
+          "type": "datetime"
+        }
+      ]
+    },
+    {
+      "table_name": "dbo.DatabaseLog",
+      "columns": [
+        {
+          "name": "DatabaseLogID",
+          "type": "int"
+        },
+        {
+          "name": "PostTime",
+          "type": "datetime"
+        },
+        {
+          "name": "DatabaseUser",
+          "type": "nvarchar"
+        },
+        {
+          "name": "Event",
+          "type": "nvarchar"
+        },
+        {
+          "name": "Schema",
+          "type": "nvarchar"
+        },
+        {
+          "name": "Object",
+          "type": "nvarchar"
+        },
+        {
+          "name": "TSQL",
+          "type": "nvarchar"
+        },
+        {
+          "name": "XmlEvent",
+          "type": "xml"
+        }
+      ]
+    },
+    {
+      "table_name": "dbo.ErrorLog",
+      "columns": [
+        {
+          "name": "ErrorLogID",
+          "type": "int"
+        },
+        {
+          "name": "ErrorTime",
+          "type": "datetime"
+        },
+        {
+          "name": "UserName",
+          "type": "nvarchar"
+        },
+        {
+          "name": "ErrorNumber",
+          "type": "int"
+        },
+        {
+          "name": "ErrorSeverity",
+          "type": "int"
+        },
+        {
+          "name": "ErrorState",
+          "type": "int"
+        },
+        {
+          "name": "ErrorProcedure",
+          "type": "nvarchar"
+        },
+        {
+          "name": "ErrorLine",
+          "type": "int"
+        },
+        {
+          "name": "ErrorMessage",
+          "type": "nvarchar"
+        }
+      ]
+    },
+    {
+      "table_name": "HumanResources.Department",
+      "columns": [
+        {
+          "name": "DepartmentID",
+          "type": "smallint"
+        },
+        {
+          "name": "Name",
+          "type": "nvarchar"
+        },
+        {
+          "name": "GroupName",
+          "type": "nvarchar"
+        },
+        {
+          "name": "ModifiedDate",
+          "type": "datetime"
+        }
+      ]
+    },
+    {
+      "table_name": "HumanResources.Employee",
+      "columns": [
+        {
+          "name": "BusinessEntityID",
+          "type": "int"
+        },
+        {
+          "name": "NationalIDNumber",
+          "type": "nvarchar"
+        },
+        {
+          "name": "LoginID",
+          "type": "nvarchar"
+        },
+        {
+          "name": "OrganizationNode",
+          "type": "hierarchyid"
+        },
+        {
+          "name": "OrganizationLevel",
+          "type": "smallint"
+        },
+        {
+          "name": "JobTitle",
+          "type": "nvarchar"
+        },
+        {
+          "name": "BirthDate",
+          "type": "date"
+        },
+        {
+          "name": "MaritalStatus",
+          "type": "nchar"
+        },
+        {
+          "name": "Gender",
+          "type": "nchar"
+        },
+        {
+          "name": "HireDate",
+          "type": "date"
+        },
+        {
+          "name": "SalariedFlag",
+          "type": "bit"
+        },
+        {
+          "name": "VacationHours",
+          "type": "smallint"
+        },
+        {
+          "name": "SickLeaveHours",
+          "type": "smallint"
+        },
+        {
+          "name": "CurrentFlag",
+          "type": "bit"
+        },
+        {
+          "name": "rowguid",
+          "type": "uniqueidentifier"
+        },
+        {
+          "name": "ModifiedDate",
+          "type": "datetime"
+        }
+      ]
+    },
+    {
+      "table_name": "HumanResources.EmployeeDepartmentHistory",
+      "columns": [
+        {
+          "name": "BusinessEntityID",
+          "type": "int"
+        },
+        {
+          "name": "DepartmentID",
+          "type": "smallint"
+        },
+        {
+          "name": "ShiftID",
+          "type": "tinyint"
+        },
+        {
+          "name": "StartDate",
+          "type": "date"
+        },
+        {
+          "name": "EndDate",
+          "type": "date"
+        },
+        {
+          "name": "ModifiedDate",
+          "type": "datetime"
+        }
+      ]
+    },
+    {
+      "table_name": "HumanResources.EmployeePayHistory",
+      "columns": [
+        {
+          "name": "BusinessEntityID",
+          "type": "int"
+        },
+        {
+          "name": "RateChangeDate",
+          "type": "datetime"
+        },
+        {
+          "name": "Rate",
+          "type": "money"
+        },
+        {
+          "name": "PayFrequency",
+          "type": "tinyint"
+        },
+        {
+          "name": "ModifiedDate",
+          "type": "datetime"
+        }
+      ]
+    },
+    {
+      "table_name": "HumanResources.JobCandidate",
+      "columns": [
+        {
+          "name": "JobCandidateID",
+          "type": "int"
+        },
+        {
+          "name": "BusinessEntityID",
+          "type": "int"
+        },
+        {
+          "name": "Resume",
+          "type": "xml"
+        },
+        {
+          "name": "ModifiedDate",
+          "type": "datetime"
+        }
+      ]
+    },
+    {
+      "table_name": "HumanResources.Shift",
+      "columns": [
+        {
+          "name": "ShiftID",
+          "type": "tinyint"
+        },
+        {
+          "name": "Name",
+          "type": "nvarchar"
+        },
+        {
+          "name": "StartTime",
+          "type": "time"
+        },
+        {
+          "name": "EndTime",
+          "type": "time"
+        },
+        {
+          "name": "ModifiedDate",
+          "type": "datetime"
+        }
+      ]
+    },
+    {
+      "table_name": "Person.Address",
+      "columns": [
+        {
+          "name": "AddressID",
+          "type": "int"
+        },
+        {
+          "name": "AddressLine1",
+          "type": "nvarchar"
+        },
+        {
+          "name": "AddressLine2",
+          "type": "nvarchar"
+        },
+        {
+          "name": "City",
+          "type": "nvarchar"
+        },
+        {
+          "name": "StateProvinceID",
+          "type": "int"
+        },
+        {
+          "name": "PostalCode",
+          "type": "nvarchar"
+        },
+        {
+          "name": "SpatialLocation",
+          "type": "geography"
+        },
+        {
+          "name": "rowguid",
+          "type": "uniqueidentifier"
+        },
+        {
+          "name": "ModifiedDate",
+          "type": "datetime"
+        }
+      ]
+    },
+    {
+      "table_name": "Person.AddressType",
+      "columns": [
+        {
+          "name": "AddressTypeID",
+          "type": "int"
+        },
+        {
+          "name": "Name",
+          "type": "nvarchar"
+        },
+        {
+          "name": "rowguid",
+          "type": "uniqueidentifier"
+        },
+        {
+          "name": "ModifiedDate",
+          "type": "datetime"
+        }
+      ]
+    },
+    {
+      "table_name": "Person.BusinessEntity",
+      "columns": [
+        {
+          "name": "BusinessEntityID",
+          "type": "int"
+        },
+        {
+          "name": "rowguid",
+          "type": "uniqueidentifier"
+        },
+        {
+          "name": "ModifiedDate",
+          "type": "datetime"
+        }
+      ]
+    },
+    {
+      "table_name": "Person.BusinessEntityAddress",
+      "columns": [
+        {
+          "name": "BusinessEntityID",
+          "type": "int"
+        },
+        {
+          "name": "AddressID",
+          "type": "int"
+        },
+        {
+          "name": "AddressTypeID",
+          "type": "int"
+        },
+        {
+          "name": "rowguid",
+          "type": "uniqueidentifier"
+        },
+        {
+          "name": "ModifiedDate",
+          "type": "datetime"
+        }
+      ]
+    },
+    {
+      "table_name": "Person.BusinessEntityContact",
+      "columns": [
+        {
+          "name": "BusinessEntityID",
+          "type": "int"
+        },
+        {
+          "name": "PersonID",
+          "type": "int"
+        },
+        {
+          "name": "ContactTypeID",
+          "type": "int"
+        },
+        {
+          "name": "rowguid",
+          "type": "uniqueidentifier"
+        },
+        {
+          "name": "ModifiedDate",
+          "type": "datetime"
+        }
+      ]
+    },
+    {
+      "table_name": "Person.ContactType",
+      "columns": [
+        {
+          "name": "ContactTypeID",
+          "type": "int"
+        },
+        {
+          "name": "Name",
+          "type": "nvarchar"
+        },
+        {
+          "name": "ModifiedDate",
+          "type": "datetime"
+        }
+      ]
+    },
+    {
+      "table_name": "Person.CountryRegion",
+      "columns": [
+        {
+          "name": "CountryRegionCode",
+          "type": "nvarchar"
+        },
+        {
+          "name": "Name",
+          "type": "nvarchar"
+        },
+        {
+          "name": "ModifiedDate",
+          "type": "datetime"
+        }
+      ]
+    },
+    {
+      "table_name": "Person.EmailAddress",
+      "columns": [
+        {
+          "name": "BusinessEntityID",
+          "type": "int"
+        },
+        {
+          "name": "EmailAddressID",
+          "type": "int"
+        },
+        {
+          "name": "EmailAddress",
+          "type": "nvarchar"
+        },
+        {
+          "name": "rowguid",
+          "type": "uniqueidentifier"
+        },
+        {
+          "name": "ModifiedDate",
+          "type": "datetime"
+        }
+      ]
+    },
+    {
+      "table_name": "Person.Password",
+      "columns": [
+        {
+          "name": "BusinessEntityID",
+          "type": "int"
+        },
+        {
+          "name": "PasswordHash",
+          "type": "varchar"
+        },
+        {
+          "name": "PasswordSalt",
+          "type": "varchar"
+        },
+        {
+          "name": "rowguid",
+          "type": "uniqueidentifier"
+        },
+        {
+          "name": "ModifiedDate",
+          "type": "datetime"
+        }
+      ]
+    },
+    {
+      "table_name": "Person.Person",
+      "columns": [
+        {
+          "name": "BusinessEntityID",
+          "type": "int"
+        },
+        {
+          "name": "PersonType",
+          "type": "nchar"
+        },
+        {
+          "name": "NameStyle",
+          "type": "bit"
+        },
+        {
+          "name": "Title",
+          "type": "nvarchar"
+        },
+        {
+          "name": "FirstName",
+          "type": "nvarchar"
+        },
+        {
+          "name": "MiddleName",
+          "type": "nvarchar"
+        },
+        {
+          "name": "LastName",
+          "type": "nvarchar"
+        },
+        {
+          "name": "Suffix",
+          "type": "nvarchar"
+        },
+        {
+          "name": "EmailPromotion",
+          "type": "int"
+        },
+        {
+          "name": "AdditionalContactInfo",
+          "type": "xml"
+        },
+        {
+          "name": "Demographics",
+          "type": "xml"
+        },
+        {
+          "name": "rowguid",
+          "type": "uniqueidentifier"
+        },
+        {
+          "name": "ModifiedDate",
+          "type": "datetime"
+        }
+      ]
+    },
+    {
+      "table_name": "Person.PersonPhone",
+      "columns": [
+        {
+          "name": "BusinessEntityID",
+          "type": "int"
+        },
+        {
+          "name": "PhoneNumber",
+          "type": "nvarchar"
+        },
+        {
+          "name": "PhoneNumberTypeID",
+          "type": "int"
+        },
+        {
+          "name": "ModifiedDate",
+          "type": "datetime"
+        }
+      ]
+    },
+    {
+      "table_name": "Person.PhoneNumberType",
+      "columns": [
+        {
+          "name": "PhoneNumberTypeID",
+          "type": "int"
+        },
+        {
+          "name": "Name",
+          "type": "nvarchar"
+        },
+        {
+          "name": "ModifiedDate",
+          "type": "datetime"
+        }
+      ]
+    },
+    {
+      "table_name": "Person.StateProvince",
+      "columns": [
+        {
+          "name": "StateProvinceID",
+          "type": "int"
+        },
+        {
+          "name": "StateProvinceCode",
+          "type": "nchar"
+        },
+        {
+          "name": "CountryRegionCode",
+          "type": "nvarchar"
+        },
+        {
+          "name": "IsOnlyStateProvinceFlag",
+          "type": "bit"
+        },
+        {
+          "name": "Name",
+          "type": "nvarchar"
+        },
+        {
+          "name": "TerritoryID",
+          "type": "int"
+        },
+        {
+          "name": "rowguid",
+          "type": "uniqueidentifier"
+        },
+        {
+          "name": "ModifiedDate",
+          "type": "datetime"
+        }
+      ]
+    },
+    {
+      "table_name": "Production.BillOfMaterials",
+      "columns": [
+        {
+          "name": "BillOfMaterialsID",
+          "type": "int"
+        },
+        {
+          "name": "ProductAssemblyID",
+          "type": "int"
+        },
+        {
+          "name": "ComponentID",
+          "type": "int"
+        },
+        {
+          "name": "StartDate",
+          "type": "datetime"
+        },
+        {
+          "name": "EndDate",
+          "type": "datetime"
+        },
+        {
+          "name": "UnitMeasureCode",
+          "type": "nchar"
+        },
+        {
+          "name": "BOMLevel",
+          "type": "smallint"
+        },
+        {
+          "name": "PerAssemblyQty",
+          "type": "decimal"
+        },
+        {
+          "name": "ModifiedDate",
+          "type": "datetime"
+        }
+      ]
+    },
+    {
+      "table_name": "Production.Culture",
+      "columns": [
+        {
+          "name": "CultureID",
+          "type": "nchar"
+        },
+        {
+          "name": "Name",
+          "type": "nvarchar"
+        },
+        {
+          "name": "ModifiedDate",
+          "type": "datetime"
+        }
+      ]
+    },
+    {
+      "table_name": "Production.Document",
+      "columns": [
+        {
+          "name": "DocumentNode",
+          "type": "hierarchyid"
+        },
+        {
+          "name": "DocumentLevel",
+          "type": "smallint"
+        },
+        {
+          "name": "Title",
+          "type": "nvarchar"
+        },
+        {
+          "name": "Owner",
+          "type": "int"
+        },
+        {
+          "name": "FolderFlag",
+          "type": "bit"
+        },
+        {
+          "name": "FileName",
+          "type": "nvarchar"
+        },
+        {
+          "name": "FileExtension",
+          "type": "nvarchar"
+        },
+        {
+          "name": "Revision",
+          "type": "nchar"
+        },
+        {
+          "name": "ChangeNumber",
+          "type": "int"
+        },
+        {
+          "name": "Status",
+          "type": "tinyint"
+        },
+        {
+          "name": "DocumentSummary",
+          "type": "nvarchar"
+        },
+        {
+          "name": "Document",
+          "type": "varbinary"
+        },
+        {
+          "name": "rowguid",
+          "type": "uniqueidentifier"
+        },
+        {
+          "name": "ModifiedDate",
+          "type": "datetime"
+        }
+      ]
+    },
+    {
+      "table_name": "Production.Illustration",
+      "columns": [
+        {
+          "name": "IllustrationID",
+          "type": "int"
+        },
+        {
+          "name": "Diagram",
+          "type": "xml"
+        },
+        {
+          "name": "ModifiedDate",
+          "type": "datetime"
+        }
+      ]
+    },
+    {
+      "table_name": "Production.Location",
+      "columns": [
+        {
+          "name": "LocationID",
+          "type": "smallint"
+        },
+        {
+          "name": "Name",
+          "type": "nvarchar"
+        },
+        {
+          "name": "CostRate",
+          "type": "smallmoney"
+        },
+        {
+          "name": "Availability",
+          "type": "decimal"
+        },
+        {
+          "name": "ModifiedDate",
+          "type": "datetime"
+        }
+      ]
+    },
+    {
+      "table_name": "Production.Product",
+      "columns": [
+        {
+          "name": "ProductID",
+          "type": "int"
+        },
+        {
+          "name": "Name",
+          "type": "nvarchar"
+        },
+        {
+          "name": "ProductNumber",
+          "type": "nvarchar"
+        },
+        {
+          "name": "MakeFlag",
+          "type": "bit"
+        },
+        {
+          "name": "FinishedGoodsFlag",
+          "type": "bit"
+        },
+        {
+          "name": "Color",
+          "type": "nvarchar"
+        },
+        {
+          "name": "SafetyStockLevel",
+          "type": "smallint"
+        },
+        {
+          "name": "ReorderPoint",
+          "type": "smallint"
+        },
+        {
+          "name": "StandardCost",
+          "type": "money"
+        },
+        {
+          "name": "ListPrice",
+          "type": "money"
+        },
+        {
+          "name": "Size",
+          "type": "nvarchar"
+        },
+        {
+          "name": "SizeUnitMeasureCode",
+          "type": "nchar"
+        },
+        {
+          "name": "WeightUnitMeasureCode",
+          "type": "nchar"
+        },
+        {
+          "name": "Weight",
+          "type": "decimal"
+        },
+        {
+          "name": "DaysToManufacture",
+          "type": "int"
+        },
+        {
+          "name": "ProductLine",
+          "type": "nchar"
+        },
+        {
+          "name": "Class",
+          "type": "nchar"
+        },
+        {
+          "name": "Style",
+          "type": "nchar"
+        },
+        {
+          "name": "ProductSubcategoryID",
+          "type": "int"
+        },
+        {
+          "name": "ProductModelID",
+          "type": "int"
+        },
+        {
+          "name": "SellStartDate",
+          "type": "datetime"
+        },
+        {
+          "name": "SellEndDate",
+          "type": "datetime"
+        },
+        {
+          "name": "DiscontinuedDate",
+          "type": "datetime"
+        },
+        {
+          "name": "rowguid",
+          "type": "uniqueidentifier"
+        },
+        {
+          "name": "ModifiedDate",
+          "type": "datetime"
+        }
+      ]
+    },
+    {
+      "table_name": "Production.ProductCategory",
+      "columns": [
+        {
+          "name": "ProductCategoryID",
+          "type": "int"
+        },
+        {
+          "name": "Name",
+          "type": "nvarchar"
+        },
+        {
+          "name": "rowguid",
+          "type": "uniqueidentifier"
+        },
+        {
+          "name": "ModifiedDate",
+          "type": "datetime"
+        }
+      ]
+    },
+    {
+      "table_name": "Production.ProductCostHistory",
+      "columns": [
+        {
+          "name": "ProductID",
+          "type": "int"
+        },
+        {
+          "name": "StartDate",
+          "type": "datetime"
+        },
+        {
+          "name": "EndDate",
+          "type": "datetime"
+        },
+        {
+          "name": "StandardCost",
+          "type": "money"
+        },
+        {
+          "name": "ModifiedDate",
+          "type": "datetime"
+        }
+      ]
+    },
+    {
+      "table_name": "Production.ProductDescription",
+      "columns": [
+        {
+          "name": "ProductDescriptionID",
+          "type": "int"
+        },
+        {
+          "name": "Description",
+          "type": "nvarchar"
+        },
+        {
+          "name": "rowguid",
+          "type": "uniqueidentifier"
+        },
+        {
+          "name": "ModifiedDate",
+          "type": "datetime"
+        }
+      ]
+    },
+    {
+      "table_name": "Production.ProductDocument",
+      "columns": [
+        {
+          "name": "ProductID",
+          "type": "int"
+        },
+        {
+          "name": "DocumentNode",
+          "type": "hierarchyid"
+        },
+        {
+          "name": "ModifiedDate",
+          "type": "datetime"
+        }
+      ]
+    },
+    {
+      "table_name": "Production.ProductInventory",
+      "columns": [
+        {
+          "name": "ProductID",
+          "type": "int"
+        },
+        {
+          "name": "LocationID",
+          "type": "smallint"
+        },
+        {
+          "name": "Shelf",
+          "type": "nvarchar"
+        },
+        {
+          "name": "Bin",
+          "type": "tinyint"
+        },
+        {
+          "name": "Quantity",
+          "type": "smallint"
+        },
+        {
+          "name": "rowguid",
+          "type": "uniqueidentifier"
+        },
+        {
+          "name": "ModifiedDate",
+          "type": "datetime"
+        }
+      ]
+    },
+    {
+      "table_name": "Production.ProductListPriceHistory",
+      "columns": [
+        {
+          "name": "ProductID",
+          "type": "int"
+        },
+        {
+          "name": "StartDate",
+          "type": "datetime"
+        },
+        {
+          "name": "EndDate",
+          "type": "datetime"
+        },
+        {
+          "name": "ListPrice",
+          "type": "money"
+        },
+        {
+          "name": "ModifiedDate",
+          "type": "datetime"
+        }
+      ]
+    },
+    {
+      "table_name": "Production.ProductModel",
+      "columns": [
+        {
+          "name": "ProductModelID",
+          "type": "int"
+        },
+        {
+          "name": "Name",
+          "type": "nvarchar"
+        },
+        {
+          "name": "CatalogDescription",
+          "type": "xml"
+        },
+        {
+          "name": "Instructions",
+          "type": "xml"
+        },
+        {
+          "name": "rowguid",
+          "type": "uniqueidentifier"
+        },
+        {
+          "name": "ModifiedDate",
+          "type": "datetime"
+        }
+      ]
+    },
+    {
+      "table_name": "Production.ProductModelIllustration",
+      "columns": [
+        {
+          "name": "ProductModelID",
+          "type": "int"
+        },
+        {
+          "name": "IllustrationID",
+          "type": "int"
+        },
+        {
+          "name": "ModifiedDate",
+          "type": "datetime"
+        }
+      ]
+    },
+    {
+      "table_name": "Production.ProductModelProductDescriptionCulture",
+      "columns": [
+        {
+          "name": "ProductModelID",
+          "type": "int"
+        },
+        {
+          "name": "ProductDescriptionID",
+          "type": "int"
+        },
+        {
+          "name": "CultureID",
+          "type": "nchar"
+        },
+        {
+          "name": "ModifiedDate",
+          "type": "datetime"
+        }
+      ]
+    },
+    {
+      "table_name": "Production.ProductPhoto",
+      "columns": [
+        {
+          "name": "ProductPhotoID",
+          "type": "int"
+        },
+        {
+          "name": "ThumbNailPhoto",
+          "type": "varbinary"
+        },
+        {
+          "name": "ThumbnailPhotoFileName",
+          "type": "nvarchar"
+        },
+        {
+          "name": "LargePhoto",
+          "type": "varbinary"
+        },
+        {
+          "name": "LargePhotoFileName",
+          "type": "nvarchar"
+        },
+        {
+          "name": "ModifiedDate",
+          "type": "datetime"
+        }
+      ]
+    },
+    {
+      "table_name": "Production.ProductProductPhoto",
+      "columns": [
+        {
+          "name": "ProductID",
+          "type": "int"
+        },
+        {
+          "name": "ProductPhotoID",
+          "type": "int"
+        },
+        {
+          "name": "Primary",
+          "type": "bit"
+        },
+        {
+          "name": "ModifiedDate",
+          "type": "datetime"
+        }
+      ]
+    },
+    {
+      "table_name": "Production.ProductReview",
+      "columns": [
+        {
+          "name": "ProductReviewID",
+          "type": "int"
+        },
+        {
+          "name": "ProductID",
+          "type": "int"
+        },
+        {
+          "name": "ReviewerName",
+          "type": "nvarchar"
+        },
+        {
+          "name": "ReviewDate",
+          "type": "datetime"
+        },
+        {
+          "name": "EmailAddress",
+          "type": "nvarchar"
+        },
+        {
+          "name": "Rating",
+          "type": "int"
+        },
+        {
+          "name": "Comments",
+          "type": "nvarchar"
+        },
+        {
+          "name": "ModifiedDate",
+          "type": "datetime"
+        }
+      ]
+    },
+    {
+      "table_name": "Production.ProductSubcategory",
+      "columns": [
+        {
+          "name": "ProductSubcategoryID",
+          "type": "int"
+        },
+        {
+          "name": "ProductCategoryID",
+          "type": "int"
+        },
+        {
+          "name": "Name",
+          "type": "nvarchar"
+        },
+        {
+          "name": "rowguid",
+          "type": "uniqueidentifier"
+        },
+        {
+          "name": "ModifiedDate",
+          "type": "datetime"
+        }
+      ]
+    },
+    {
+      "table_name": "Production.ScrapReason",
+      "columns": [
+        {
+          "name": "ScrapReasonID",
+          "type": "smallint"
+        },
+        {
+          "name": "Name",
+          "type": "nvarchar"
+        },
+        {
+          "name": "ModifiedDate",
+          "type": "datetime"
+        }
+      ]
+    },
+    {
+      "table_name": "Production.TransactionHistory",
+      "columns": [
+        {
+          "name": "TransactionID",
+          "type": "int"
+        },
+        {
+          "name": "ProductID",
+          "type": "int"
+        },
+        {
+          "name": "ReferenceOrderID",
+          "type": "int"
+        },
+        {
+          "name": "ReferenceOrderLineID",
+          "type": "int"
+        },
+        {
+          "name": "TransactionDate",
+          "type": "datetime"
+        },
+        {
+          "name": "TransactionType",
+          "type": "nchar"
+        },
+        {
+          "name": "Quantity",
+          "type": "int"
+        },
+        {
+          "name": "ActualCost",
+          "type": "money"
+        },
+        {
+          "name": "ModifiedDate",
+          "type": "datetime"
+        }
+      ]
+    },
+    {
+      "table_name": "Production.TransactionHistoryArchive",
+      "columns": [
+        {
+          "name": "TransactionID",
+          "type": "int"
+        },
+        {
+          "name": "ProductID",
+          "type": "int"
+        },
+        {
+          "name": "ReferenceOrderID",
+          "type": "int"
+        },
+        {
+          "name": "ReferenceOrderLineID",
+          "type": "int"
+        },
+        {
+          "name": "TransactionDate",
+          "type": "datetime"
+        },
+        {
+          "name": "TransactionType",
+          "type": "nchar"
+        },
+        {
+          "name": "Quantity",
+          "type": "int"
+        },
+        {
+          "name": "ActualCost",
+          "type": "money"
+        },
+        {
+          "name": "ModifiedDate",
+          "type": "datetime"
+        }
+      ]
+    },
+    {
+      "table_name": "Production.UnitMeasure",
+      "columns": [
+        {
+          "name": "UnitMeasureCode",
+          "type": "nchar"
+        },
+        {
+          "name": "Name",
+          "type": "nvarchar"
+        },
+        {
+          "name": "ModifiedDate",
+          "type": "datetime"
+        }
+      ]
+    },
+    {
+      "table_name": "Production.WorkOrder",
+      "columns": [
+        {
+          "name": "WorkOrderID",
+          "type": "int"
+        },
+        {
+          "name": "ProductID",
+          "type": "int"
+        },
+        {
+          "name": "OrderQty",
+          "type": "int"
+        },
+        {
+          "name": "StockedQty",
+          "type": "int"
+        },
+        {
+          "name": "ScrappedQty",
+          "type": "smallint"
+        },
+        {
+          "name": "StartDate",
+          "type": "datetime"
+        },
+        {
+          "name": "EndDate",
+          "type": "datetime"
+        },
+        {
+          "name": "DueDate",
+          "type": "datetime"
+        },
+        {
+          "name": "ScrapReasonID",
+          "type": "smallint"
+        },
+        {
+          "name": "ModifiedDate",
+          "type": "datetime"
+        }
+      ]
+    },
+    {
+      "table_name": "Production.WorkOrderRouting",
+      "columns": [
+        {
+          "name": "WorkOrderID",
+          "type": "int"
+        },
+        {
+          "name": "ProductID",
+          "type": "int"
+        },
+        {
+          "name": "OperationSequence",
+          "type": "smallint"
+        },
+        {
+          "name": "LocationID",
+          "type": "smallint"
+        },
+        {
+          "name": "ScheduledStartDate",
+          "type": "datetime"
+        },
+        {
+          "name": "ScheduledEndDate",
+          "type": "datetime"
+        },
+        {
+          "name": "ActualStartDate",
+          "type": "datetime"
+        },
+        {
+          "name": "ActualEndDate",
+          "type": "datetime"
+        },
+        {
+          "name": "ActualResourceHrs",
+          "type": "decimal"
+        },
+        {
+          "name": "PlannedCost",
+          "type": "money"
+        },
+        {
+          "name": "ActualCost",
+          "type": "money"
+        },
+        {
+          "name": "ModifiedDate",
+          "type": "datetime"
+        }
+      ]
+    },
+    {
+      "table_name": "Purchasing.ProductVendor",
+      "columns": [
+        {
+          "name": "ProductID",
+          "type": "int"
+        },
+        {
+          "name": "BusinessEntityID",
+          "type": "int"
+        },
+        {
+          "name": "AverageLeadTime",
+          "type": "int"
+        },
+        {
+          "name": "StandardPrice",
+          "type": "money"
+        },
+        {
+          "name": "LastReceiptCost",
+          "type": "money"
+        },
+        {
+          "name": "LastReceiptDate",
+          "type": "datetime"
+        },
+        {
+          "name": "MinOrderQty",
+          "type": "int"
+        },
+        {
+          "name": "MaxOrderQty",
+          "type": "int"
+        },
+        {
+          "name": "OnOrderQty",
+          "type": "int"
+        },
+        {
+          "name": "UnitMeasureCode",
+          "type": "nchar"
+        },
+        {
+          "name": "ModifiedDate",
+          "type": "datetime"
+        }
+      ]
+    },
+    {
+      "table_name": "Purchasing.PurchaseOrderDetail",
+      "columns": [
+        {
+          "name": "PurchaseOrderID",
+          "type": "int"
+        },
+        {
+          "name": "PurchaseOrderDetailID",
+          "type": "int"
+        },
+        {
+          "name": "DueDate",
+          "type": "datetime"
+        },
+        {
+          "name": "OrderQty",
+          "type": "smallint"
+        },
+        {
+          "name": "ProductID",
+          "type": "int"
+        },
+        {
+          "name": "UnitPrice",
+          "type": "money"
+        },
+        {
+          "name": "LineTotal",
+          "type": "money"
+        },
+        {
+          "name": "ReceivedQty",
+          "type": "decimal"
+        },
+        {
+          "name": "RejectedQty",
+          "type": "decimal"
+        },
+        {
+          "name": "StockedQty",
+          "type": "decimal"
+        },
+        {
+          "name": "ModifiedDate",
+          "type": "datetime"
+        }
+      ]
+    },
+    {
+      "table_name": "Purchasing.PurchaseOrderHeader",
+      "columns": [
+        {
+          "name": "PurchaseOrderID",
+          "type": "int"
+        },
+        {
+          "name": "RevisionNumber",
+          "type": "tinyint"
+        },
+        {
+          "name": "Status",
+          "type": "tinyint"
+        },
+        {
+          "name": "EmployeeID",
+          "type": "int"
+        },
+        {
+          "name": "VendorID",
+          "type": "int"
+        },
+        {
+          "name": "ShipMethodID",
+          "type": "int"
+        },
+        {
+          "name": "OrderDate",
+          "type": "datetime"
+        },
+        {
+          "name": "ShipDate",
+          "type": "datetime"
+        },
+        {
+          "name": "SubTotal",
+          "type": "money"
+        },
+        {
+          "name": "TaxAmt",
+          "type": "money"
+        },
+        {
+          "name": "Freight",
+          "type": "money"
+        },
+        {
+          "name": "TotalDue",
+          "type": "money"
+        },
+        {
+          "name": "ModifiedDate",
+          "type": "datetime"
+        }
+      ]
+    },
+    {
+      "table_name": "Purchasing.ShipMethod",
+      "columns": [
+        {
+          "name": "ShipMethodID",
+          "type": "int"
+        },
+        {
+          "name": "Name",
+          "type": "nvarchar"
+        },
+        {
+          "name": "ShipBase",
+          "type": "money"
+        },
+        {
+          "name": "ShipRate",
+          "type": "money"
+        },
+        {
+          "name": "rowguid",
+          "type": "uniqueidentifier"
+        },
+        {
+          "name": "ModifiedDate",
+          "type": "datetime"
+        }
+      ]
+    },
+    {
+      "table_name": "Purchasing.Vendor",
+      "columns": [
+        {
+          "name": "BusinessEntityID",
+          "type": "int"
+        },
+        {
+          "name": "AccountNumber",
+          "type": "nvarchar"
+        },
+        {
+          "name": "Name",
+          "type": "nvarchar"
+        },
+        {
+          "name": "CreditRating",
+          "type": "tinyint"
+        },
+        {
+          "name": "PreferredVendorStatus",
+          "type": "bit"
+        },
+        {
+          "name": "ActiveFlag",
+          "type": "bit"
+        },
+        {
+          "name": "PurchasingWebServiceURL",
+          "type": "nvarchar"
+        },
+        {
+          "name": "ModifiedDate",
+          "type": "datetime"
+        }
+      ]
+    },
+    {
+      "table_name": "Sales.CountryRegionCurrency",
+      "columns": [
+        {
+          "name": "CountryRegionCode",
+          "type": "nvarchar"
+        },
+        {
+          "name": "CurrencyCode",
+          "type": "nchar"
+        },
+        {
+          "name": "ModifiedDate",
+          "type": "datetime"
+        }
+      ]
+    },
+    {
+      "table_name": "Sales.CreditCard",
+      "columns": [
+        {
+          "name": "CreditCardID",
+          "type": "int"
+        },
+        {
+          "name": "CardType",
+          "type": "nvarchar"
+        },
+        {
+          "name": "CardNumber",
+          "type": "nvarchar"
+        },
+        {
+          "name": "ExpMonth",
+          "type": "tinyint"
+        },
+        {
+          "name": "ExpYear",
+          "type": "smallint"
+        },
+        {
+          "name": "ModifiedDate",
+          "type": "datetime"
+        }
+      ]
+    },
+    {
+      "table_name": "Sales.Currency",
+      "columns": [
+        {
+          "name": "CurrencyCode",
+          "type": "nchar"
+        },
+        {
+          "name": "Name",
+          "type": "nvarchar"
+        },
+        {
+          "name": "ModifiedDate",
+          "type": "datetime"
+        }
+      ]
+    },
+    {
+      "table_name": "Sales.CurrencyRate",
+      "columns": [
+        {
+          "name": "CurrencyRateID",
+          "type": "int"
+        },
+        {
+          "name": "CurrencyRateDate",
+          "type": "datetime"
+        },
+        {
+          "name": "FromCurrencyCode",
+          "type": "nchar"
+        },
+        {
+          "name": "ToCurrencyCode",
+          "type": "nchar"
+        },
+        {
+          "name": "AverageRate",
+          "type": "money"
+        },
+        {
+          "name": "EndOfDayRate",
+          "type": "money"
+        },
+        {
+          "name": "ModifiedDate",
+          "type": "datetime"
+        }
+      ]
+    },
+    {
+      "table_name": "Sales.Customer",
+      "columns": [
+        {
+          "name": "CustomerID",
+          "type": "int"
+        },
+        {
+          "name": "PersonID",
+          "type": "int"
+        },
+        {
+          "name": "StoreID",
+          "type": "int"
+        },
+        {
+          "name": "TerritoryID",
+          "type": "int"
+        },
+        {
+          "name": "AccountNumber",
+          "type": "varchar"
+        },
+        {
+          "name": "rowguid",
+          "type": "uniqueidentifier"
+        },
+        {
+          "name": "ModifiedDate",
+          "type": "datetime"
+        }
+      ]
+    },
+    {
+      "table_name": "Sales.PersonCreditCard",
+      "columns": [
+        {
+          "name": "BusinessEntityID",
+          "type": "int"
+        },
+        {
+          "name": "CreditCardID",
+          "type": "int"
+        },
+        {
+          "name": "ModifiedDate",
+          "type": "datetime"
+        }
+      ]
+    },
+    {
+      "table_name": "Sales.SalesOrderDetail",
+      "columns": [
+        {
+          "name": "SalesOrderID",
+          "type": "int"
+        },
+        {
+          "name": "SalesOrderDetailID",
+          "type": "int"
+        },
+        {
+          "name": "CarrierTrackingNumber",
+          "type": "nvarchar"
+        },
+        {
+          "name": "OrderQty",
+          "type": "smallint"
+        },
+        {
+          "name": "ProductID",
+          "type": "int"
+        },
+        {
+          "name": "SpecialOfferID",
+          "type": "int"
+        },
+        {
+          "name": "UnitPrice",
+          "type": "money"
+        },
+        {
+          "name": "UnitPriceDiscount",
+          "type": "money"
+        },
+        {
+          "name": "LineTotal",
+          "type": "numeric"
+        },
+        {
+          "name": "rowguid",
+          "type": "uniqueidentifier"
+        },
+        {
+          "name": "ModifiedDate",
+          "type": "datetime"
+        }
+      ]
+    },
+    {
+      "table_name": "Sales.SalesOrderHeader",
+      "columns": [
+        {
+          "name": "SalesOrderID",
+          "type": "int"
+        },
+        {
+          "name": "RevisionNumber",
+          "type": "tinyint"
+        },
+        {
+          "name": "OrderDate",
+          "type": "datetime"
+        },
+        {
+          "name": "DueDate",
+          "type": "datetime"
+        },
+        {
+          "name": "ShipDate",
+          "type": "datetime"
+        },
+        {
+          "name": "Status",
+          "type": "tinyint"
+        },
+        {
+          "name": "OnlineOrderFlag",
+          "type": "bit"
+        },
+        {
+          "name": "SalesOrderNumber",
+          "type": "nvarchar"
+        },
+        {
+          "name": "PurchaseOrderNumber",
+          "type": "nvarchar"
+        },
+        {
+          "name": "AccountNumber",
+          "type": "nvarchar"
+        },
+        {
+          "name": "CustomerID",
+          "type": "int"
+        },
+        {
+          "name": "SalesPersonID",
+          "type": "int"
+        },
+        {
+          "name": "TerritoryID",
+          "type": "int"
+        },
+        {
+          "name": "BillToAddressID",
+          "type": "int"
+        },
+        {
+          "name": "ShipToAddressID",
+          "type": "int"
+        },
+        {
+          "name": "ShipMethodID",
+          "type": "int"
+        },
+        {
+          "name": "CreditCardID",
+          "type": "int"
+        },
+        {
+          "name": "CreditCardApprovalCode",
+          "type": "varchar"
+        },
+        {
+          "name": "CurrencyRateID",
+          "type": "int"
+        },
+        {
+          "name": "SubTotal",
+          "type": "money"
+        },
+        {
+          "name": "TaxAmt",
+          "type": "money"
+        },
+        {
+          "name": "Freight",
+          "type": "money"
+        },
+        {
+          "name": "TotalDue",
+          "type": "money"
+        },
+        {
+          "name": "Comment",
+          "type": "nvarchar"
+        },
+        {
+          "name": "rowguid",
+          "type": "uniqueidentifier"
+        },
+        {
+          "name": "ModifiedDate",
+          "type": "datetime"
+        }
+      ]
+    },
+    {
+      "table_name": "Sales.SalesOrderHeaderSalesReason",
+      "columns": [
+        {
+          "name": "SalesOrderID",
+          "type": "int"
+        },
+        {
+          "name": "SalesReasonID",
+          "type": "int"
+        },
+        {
+          "name": "ModifiedDate",
+          "type": "datetime"
+        }
+      ]
+    },
+    {
+      "table_name": "Sales.SalesPerson",
+      "columns": [
+        {
+          "name": "BusinessEntityID",
+          "type": "int"
+        },
+        {
+          "name": "TerritoryID",
+          "type": "int"
+        },
+        {
+          "name": "SalesQuota",
+          "type": "money"
+        },
+        {
+          "name": "Bonus",
+          "type": "money"
+        },
+        {
+          "name": "CommissionPct",
+          "type": "smallmoney"
+        },
+        {
+          "name": "SalesYTD",
+          "type": "money"
+        },
+        {
+          "name": "SalesLastYear",
+          "type": "money"
+        },
+        {
+          "name": "rowguid",
+          "type": "uniqueidentifier"
+        },
+        {
+          "name": "ModifiedDate",
+          "type": "datetime"
+        }
+      ]
+    },
+    {
+      "table_name": "Sales.SalesPersonQuotaHistory",
+      "columns": [
+        {
+          "name": "BusinessEntityID",
+          "type": "int"
+        },
+        {
+          "name": "QuotaDate",
+          "type": "datetime"
+        },
+        {
+          "name": "SalesQuota",
+          "type": "money"
+        },
+        {
+          "name": "rowguid",
+          "type": "uniqueidentifier"
+        },
+        {
+          "name": "ModifiedDate",
+          "type": "datetime"
+        }
+      ]
+    },
+    {
+      "table_name": "Sales.SalesReason",
+      "columns": [
+        {
+          "name": "SalesReasonID",
+          "type": "int"
+        },
+        {
+          "name": "Name",
+          "type": "nvarchar"
+        },
+        {
+          "name": "ReasonType",
+          "type": "nvarchar"
+        },
+        {
+          "name": "ModifiedDate",
+          "type": "datetime"
+        }
+      ]
+    },
+    {
+      "table_name": "Sales.SalesTaxRate",
+      "columns": [
+        {
+          "name": "SalesTaxRateID",
+          "type": "int"
+        },
+        {
+          "name": "StateProvinceID",
+          "type": "int"
+        },
+        {
+          "name": "TaxType",
+          "type": "tinyint"
+        },
+        {
+          "name": "TaxRate",
+          "type": "smallmoney"
+        },
+        {
+          "name": "Name",
+          "type": "nvarchar"
+        },
+        {
+          "name": "rowguid",
+          "type": "uniqueidentifier"
+        },
+        {
+          "name": "ModifiedDate",
+          "type": "datetime"
+        }
+      ]
+    },
+    {
+      "table_name": "Sales.SalesTerritory",
+      "columns": [
+        {
+          "name": "TerritoryID",
+          "type": "int"
+        },
+        {
+          "name": "Name",
+          "type": "nvarchar"
+        },
+        {
+          "name": "CountryRegionCode",
+          "type": "nvarchar"
+        },
+        {
+          "name": "Group",
+          "type": "nvarchar"
+        },
+        {
+          "name": "SalesYTD",
+          "type": "money"
+        },
+        {
+          "name": "SalesLastYear",
+          "type": "money"
+        },
+        {
+          "name": "CostYTD",
+          "type": "money"
+        },
+        {
+          "name": "CostLastYear",
+          "type": "money"
+        },
+        {
+          "name": "rowguid",
+          "type": "uniqueidentifier"
+        },
+        {
+          "name": "ModifiedDate",
+          "type": "datetime"
+        }
+      ]
+    },
+    {
+      "table_name": "Sales.SalesTerritoryHistory",
+      "columns": [
+        {
+          "name": "BusinessEntityID",
+          "type": "int"
+        },
+        {
+          "name": "TerritoryID",
+          "type": "int"
+        },
+        {
+          "name": "StartDate",
+          "type": "datetime"
+        },
+        {
+          "name": "EndDate",
+          "type": "datetime"
+        },
+        {
+          "name": "rowguid",
+          "type": "uniqueidentifier"
+        },
+        {
+          "name": "ModifiedDate",
+          "type": "datetime"
+        }
+      ]
+    },
+    {
+      "table_name": "Sales.ShoppingCartItem",
+      "columns": [
+        {
+          "name": "ShoppingCartItemID",
+          "type": "int"
+        },
+        {
+          "name": "ShoppingCartID",
+          "type": "nvarchar"
+        },
+        {
+          "name": "Quantity",
+          "type": "int"
+        },
+        {
+          "name": "ProductID",
+          "type": "int"
+        },
+        {
+          "name": "DateCreated",
+          "type": "datetime"
+        },
+        {
+          "name": "ModifiedDate",
+          "type": "datetime"
+        }
+      ]
+    },
+    {
+      "table_name": "Sales.SpecialOffer",
+      "columns": [
+        {
+          "name": "SpecialOfferID",
+          "type": "int"
+        },
+        {
+          "name": "Description",
+          "type": "nvarchar"
+        },
+        {
+          "name": "DiscountPct",
+          "type": "smallmoney"
+        },
+        {
+          "name": "Type",
+          "type": "nvarchar"
+        },
+        {
+          "name": "Category",
+          "type": "nvarchar"
+        },
+        {
+          "name": "StartDate",
+          "type": "datetime"
+        },
+        {
+          "name": "EndDate",
+          "type": "datetime"
+        },
+        {
+          "name": "MinQty",
+          "type": "int"
+        },
+        {
+          "name": "MaxQty",
+          "type": "int"
+        },
+        {
+          "name": "rowguid",
+          "type": "uniqueidentifier"
+        },
+        {
+          "name": "ModifiedDate",
+          "type": "datetime"
+        }
+      ]
+    },
+    {
+      "table_name": "Sales.SpecialOfferProduct",
+      "columns": [
+        {
+          "name": "SpecialOfferID",
+          "type": "int"
+        },
+        {
+          "name": "ProductID",
+          "type": "int"
+        },
+        {
+          "name": "rowguid",
+          "type": "uniqueidentifier"
+        },
+        {
+          "name": "ModifiedDate",
+          "type": "datetime"
+        }
+      ]
+    },
+    {
+      "table_name": "Sales.Store",
+      "columns": [
+        {
+          "name": "BusinessEntityID",
+          "type": "int"
+        },
+        {
+          "name": "Name",
+          "type": "nvarchar"
+        },
+        {
+          "name": "SalesPersonID",
+          "type": "int"
+        },
+        {
+          "name": "Demographics",
+          "type": "xml"
+        },
+        {
+          "name": "rowguid",
+          "type": "uniqueidentifier"
+        },
+        {
+          "name": "ModifiedDate",
+          "type": "datetime"
+        }
+      ]
+    }
+  ]
+  

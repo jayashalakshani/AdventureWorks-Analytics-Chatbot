@@ -1,0 +1,37 @@
+{
+  "database": "AdventureWorks2019",
+  "queries": [
+    {
+      "description": "Get all departments with their group names",
+      "sql": "SELECT [DepartmentID], [Name], [GroupName], [ModifiedDate] FROM [HumanResources].[Department] ORDER BY [GroupName], [Name]"
+    },
+    {
+      "description": "Get employee details with their department",
+      "sql": "SELECT e.[BusinessEntityID], e.[NationalIDNumber], e.[JobTitle], d.[Name] AS DepartmentName FROM [HumanResources].[Employee] e INNER JOIN [HumanResources].[EmployeeDepartmentHistory] h ON e.[BusinessEntityID] = h.[BusinessEntityID] INNER JOIN [HumanResources].[Department] d ON h.[DepartmentID] = d.[DepartmentID] WHERE h.[EndDate] IS NULL"
+    },
+    {
+      "description": "Get total sales by product category for current year",
+      "sql": "SELECT pc.[Name] AS CategoryName, SUM(sod.[LineTotal]) AS TotalSales FROM [Sales].[SalesOrderDetail] sod INNER JOIN [Production].[Product] p ON sod.[ProductID] = p.[ProductID] INNER JOIN [Production].[ProductSubcategory] ps ON p.[ProductSubcategoryID] = ps.[ProductSubcategoryID] INNER JOIN [Production].[ProductCategory] pc ON ps.[ProductCategoryID] = pc.[ProductCategoryID] INNER JOIN [Sales].[SalesOrderHeader] soh ON sod.[SalesOrderID] = soh.[SalesOrderID] WHERE YEAR(soh.[OrderDate]) = YEAR(GETDATE()) GROUP BY pc.[Name] ORDER BY TotalSales DESC"
+    },
+    {
+      "description": "Get customer contact information",
+      "sql": "SELECT c.[CustomerID], p.[FirstName], p.[LastName], e.[EmailAddress], ph.[PhoneNumber] FROM [Sales].[Customer] c INNER JOIN [Person].[Person] p ON c.[PersonID] = p.[BusinessEntityID] LEFT JOIN [Person].[EmailAddress] e ON p.[BusinessEntityID] = e.[BusinessEntityID] LEFT JOIN [Person].[PersonPhone] ph ON p.[BusinessEntityID] = ph.[BusinessEntityID]"
+    },
+    {
+      "description": "Get products with their current inventory",
+      "sql": "SELECT p.[ProductID], p.[Name], p.[ProductNumber], SUM(pi.[Quantity]) AS TotalInventory FROM [Production].[Product] p LEFT JOIN [Production].[ProductInventory] pi ON p.[ProductID] = pi.[ProductID] GROUP BY p.[ProductID], p.[Name], p.[ProductNumber] HAVING SUM(pi.[Quantity]) > 0 ORDER BY TotalInventory DESC"
+    },
+    {
+      "description": "Get all tables and columns as JSON",
+      "sql": "SELECT JSON_QUERY((SELECT t.TABLE_SCHEMA + '.' + t.TABLE_NAME AS 'table_name', JSON_QUERY((SELECT c.COLUMN_NAME AS 'name', c.DATA_TYPE AS 'type' FROM INFORMATION_SCHEMA.COLUMNS c WHERE c.TABLE_SCHEMA = t.TABLE_SCHEMA AND c.TABLE_NAME = t.TABLE_NAME ORDER BY c.ORDINAL_POSITION FOR JSON PATH)) AS 'columns' FROM INFORMATION_SCHEMA.TABLES t WHERE t.TABLE_TYPE = 'BASE TABLE' ORDER BY t.TABLE_SCHEMA, t.TABLE_NAME FOR JSON PATH)) AS JSONData"
+    },
+    {
+      "description": "Get top 10 sales persons by sales amount",
+      "sql": "SELECT TOP 10 sp.[BusinessEntityID], p.[FirstName], p.[LastName], SUM(soh.[SubTotal]) AS TotalSales FROM [Sales].[SalesPerson] sp INNER JOIN [Person].[Person] p ON sp.[BusinessEntityID] = p.[BusinessEntityID] INNER JOIN [Sales].[SalesOrderHeader] soh ON sp.[BusinessEntityID] = soh.[SalesPersonID] GROUP BY sp.[BusinessEntityID], p.[FirstName], p.[LastName] ORDER BY TotalSales DESC"
+    },
+    {
+      "description": "Get bill of materials for a specific product",
+      "sql": "SELECT bm.[BillOfMaterialsID], p1.[Name] AS ProductName, p2.[Name] AS ComponentName, bm.[PerAssemblyQty] FROM [Production].[BillOfMaterials] bm INNER JOIN [Production].[Product] p1 ON bm.[ProductAssemblyID] = p1.[ProductID] INNER JOIN [Production].[Product] p2 ON bm.[ComponentID] = p2.[ProductID] WHERE bm.[ProductAssemblyID] = 774"
+    }
+  ]
+}

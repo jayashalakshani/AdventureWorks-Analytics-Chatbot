@@ -1,0 +1,80 @@
+{
+  "database": "AdventureWorks2019",
+  "critical_rules": {
+    "general": [
+      {
+        "rule": "Always use schema qualification",
+        "description": "Prevents ambiguity and improves performance",
+        "example": "SELECT * FROM [Sales].[SalesOrderHeader] instead of SELECT * FROM SalesOrderHeader"
+      },
+      {
+        "rule": "Use appropriate JOIN types",
+        "description": "Choose INNER/LEFT/RIGHT/FULL based on data requirements",
+        "example": "Use LEFT JOIN when preserving all rows from left table is needed"
+      },
+      {
+        "rule": "Include WHERE clauses for specificity",
+        "description": "Reduces unnecessary data retrieval",
+        "example": "Add WHERE OrderDate >= '2020-01-01' instead of selecting all rows"
+      },
+      {
+        "rule": "Use table aliases",
+        "description": "Improves readability and prevents column ambiguity",
+        "example": "SELECT c.CustomerID FROM Sales.Customer c"
+      },
+      {
+        "rule": "Table names start with capital letters and have no spaces",
+        "description": "Maintains consistent naming convention across the database",
+        "example": "Use [HumanResources].[Employee] instead of [humanresources].[employee]"
+      }
+    ],
+    "performance": [
+      {
+        "rule": "Avoid SELECT * in production",
+        "description": "Specify only needed columns to reduce I/O",
+        "example": "SELECT ProductID, Name FROM Production.Product instead of SELECT *"
+      },
+      {
+        "rule": "Use EXISTS instead of COUNT for existence checks",
+        "description": "Stops processing once a match is found",
+        "example": "IF EXISTS (SELECT 1 FROM Sales.SalesOrderHeader WHERE CustomerID = 1) instead of SELECT COUNT(*)"
+      }
+    ]
+  },
+  "table_examples": {
+    "HumanResources.Department": {
+      "description": "Department information",
+      "example_query": "SELECT d.DepartmentID, d.Name, d.GroupName FROM [HumanResources].[Department] d WHERE d.GroupName = 'Manufacturing' ORDER BY d.Name"
+    },
+    "HumanResources.Employee": {
+      "description": "Employee details",
+      "example_query": "SELECT e.BusinessEntityID, e.NationalIDNumber, e.JobTitle, e.HireDate FROM [HumanResources].[Employee] e WHERE e.HireDate >= '2015-01-01' ORDER BY e.HireDate DESC"
+    },
+    "Sales.SalesOrderHeader": {
+      "description": "Sales order headers",
+      "example_query": "SELECT soh.SalesOrderID, soh.OrderDate, soh.TotalDue FROM [Sales].[SalesOrderHeader] soh WHERE soh.OrderDate BETWEEN '2020-01-01' AND '2020-12-31' ORDER BY soh.OrderDate"
+    },
+    "Production.Product": {
+      "description": "Product catalog",
+      "example_query": "SELECT p.ProductID, p.Name, p.ListPrice FROM [Production].[Product] p WHERE p.ListPrice > 1000 AND p.FinishedGoodsFlag = 1 ORDER BY p.ListPrice DESC"
+    },
+    "Person.Person": {
+      "description": "Person details",
+      "example_query": "SELECT p.BusinessEntityID, p.FirstName, p.LastName FROM [Person].[Person] p WHERE p.PersonType = 'EM' ORDER BY p.LastName, p.FirstName"
+    }
+  },
+  "join_examples": [
+    {
+      "description": "Employee with Department (Current assignments)",
+      "sql": "SELECT e.BusinessEntityID, e.JobTitle, d.Name AS DepartmentName FROM [HumanResources].[Employee] e INNER JOIN [HumanResources].[EmployeeDepartmentHistory] edh ON e.BusinessEntityID = edh.BusinessEntityID INNER JOIN [HumanResources].[Department] d ON edh.DepartmentID = d.DepartmentID WHERE edh.EndDate IS NULL"
+    },
+    {
+      "description": "Sales Orders with Customer and Salesperson",
+      "sql": "SELECT soh.SalesOrderID, soh.OrderDate, c.CustomerID, p.FirstName + ' ' + p.LastName AS SalesPersonName FROM [Sales].[SalesOrderHeader] soh INNER JOIN [Sales].[Customer] c ON soh.CustomerID = c.CustomerID LEFT JOIN [Sales].[SalesPerson] sp ON soh.SalesPersonID = sp.BusinessEntityID LEFT JOIN [Person].[Person] p ON sp.BusinessEntityID = p.BusinessEntityID WHERE soh.OrderDate >= '2020-01-01'"
+    },
+    {
+      "description": "Products with Inventory and Category",
+      "sql": "SELECT p.ProductID, p.Name, pc.Name AS CategoryName, SUM(pi.Quantity) AS TotalInventory FROM [Production].[Product] p LEFT JOIN [Production].[ProductInventory] pi ON p.ProductID = pi.ProductID INNER JOIN [Production].[ProductSubcategory] ps ON p.ProductSubcategoryID = ps.ProductSubcategoryID INNER JOIN [Production].[ProductCategory] pc ON ps.ProductCategoryID = pc.ProductCategoryID GROUP BY p.ProductID, p.Name, pc.Name HAVING SUM(pi.Quantity) > 0 ORDER BY TotalInventory DESC"
+    }
+  ]
+}
